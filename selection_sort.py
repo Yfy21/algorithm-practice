@@ -14,6 +14,7 @@ def selection_sort(numbers_list):
         (numbers_list[i], numbers_list[current_smallest_index]) = numbers_list[current_smallest_index], numbers_list[i]
     return numbers_list
 
+
 def reverse_selection_sort(numbers_list):
     for i in range(len(numbers_list)):
         current_smallest = numbers_list[0]
@@ -24,6 +25,7 @@ def reverse_selection_sort(numbers_list):
                 current_smallest_index = j
         (numbers_list[-i-1], numbers_list[current_smallest_index]) = numbers_list[current_smallest_index], numbers_list[-i-1]
     return numbers_list
+
 
 if __name__ == '__main__':
     print(selection_sort(numbers_list))
