@@ -7,7 +7,7 @@ def selection_sort(numbers_list):
     for i in range(len(numbers_list)):
         current_smallest = numbers_list[i]
         current_smallest_index = i
-        for j in range(i, len(numbers_list)):
+        for j in range(i+1, len(numbers_list)):
             if numbers_list[j] < current_smallest:
                 current_smallest = numbers_list[j]
                 current_smallest_index = j
