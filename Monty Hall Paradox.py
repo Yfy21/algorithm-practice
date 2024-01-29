@@ -1,6 +1,4 @@
-
 import random
-import seaborn as sns
 
 
 def monty_hall():
@@ -28,13 +26,3 @@ sample = [monty_hall() for _ in range(num_of_runs)]
 success_rate = sum(sample)/num_of_runs
 
 print(f"{success_rate*100:.2f}%")
-
-# ax = sns.barplot(x=['Fracasso', 'Sucesso'],
-#                  y=[1-success_rate, success_rate],
-#                  color='#3498db',
-#                  width=0.6)
-#
-# ax.set_facecolor('#F5F5F5')
-# ax.set_ylim(0, 1)
-#
-# plt.savefig('Monty Hall Plot')
