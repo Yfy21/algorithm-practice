@@ -20,14 +20,16 @@ def selection_sort(numbers_list):
 
 
 def reverse_selection_sort(numbers_list):
-    for i in range(len(numbers_list)):
-        current_smallest = numbers_list[0]
-        current_smallest_index = 0
-        for j in range(len(numbers_list)-i):
+    current_loop = 1
+    for i in range(len(numbers_list)-1, -1, -1):
+        current_smallest = numbers_list[i]
+        current_smallest_index = i
+        for j in range(len(numbers_list)-1-current_loop, -1, -1):
             if numbers_list[j] < current_smallest:
                 current_smallest = numbers_list[j]
                 current_smallest_index = j
-        (numbers_list[-i-1], numbers_list[current_smallest_index]) = numbers_list[current_smallest_index], numbers_list[-i-1]
+        (numbers_list[i], numbers_list[current_smallest_index]) = numbers_list[current_smallest_index], numbers_list[i]
+        current_loop += 1
     return numbers_list
 
 
