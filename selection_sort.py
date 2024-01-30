@@ -8,25 +8,25 @@ def generate_random_numbers(start, finish, n):
 
 
 def selection_sort(numbers_list):
-    for i in range(len(numbers_list)):
-        current_smallest = numbers_list[i]
+    """Sorts a list of numbers in ascending order using selection sort."""
+    for i in range(len(numbers_list)-1):
         current_smallest_index = i
         for j in range(i+1, len(numbers_list)):
-            if numbers_list[j] < current_smallest:
-                current_smallest = numbers_list[j]
+            if numbers_list[j] < numbers_list[i]:
+                numbers_list[i] = numbers_list[j]
                 current_smallest_index = j
         (numbers_list[i], numbers_list[current_smallest_index]) = numbers_list[current_smallest_index], numbers_list[i]
     return numbers_list
 
 
 def reverse_selection_sort(numbers_list):
+    """Sorts a list of numbers in descending order using selection sort."""
     current_loop = 1
     for i in range(len(numbers_list)-1, -1, -1):
-        current_smallest = numbers_list[i]
         current_smallest_index = i
         for j in range(len(numbers_list)-1-current_loop, -1, -1):
-            if numbers_list[j] < current_smallest:
-                current_smallest = numbers_list[j]
+            if numbers_list[j] < numbers_list[i]:
+                numbers_list[i] = numbers_list[j]
                 current_smallest_index = j
         (numbers_list[i], numbers_list[current_smallest_index]) = numbers_list[current_smallest_index], numbers_list[i]
         current_loop += 1
