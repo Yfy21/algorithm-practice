@@ -1,6 +1,10 @@
 import random
 
-numbers_list = [random.randint(1, 100) for _ in range(10)]
+
+def generate_random_numbers(start, finish, n):
+    """Generates n random numbers ranging from the 'start' value to the 'finish' value"""
+    numbers_list = [random.randint(start, finish) for _ in range(n)]
+    return numbers_list
 
 
 def selection_sort(numbers_list):
@@ -28,5 +32,7 @@ def reverse_selection_sort(numbers_list):
 
 
 if __name__ == '__main__':
+    numbers_list = generate_random_numbers(0, 100, 10)
     print(selection_sort(numbers_list))
-    # print(reverse_selection_sort(numbers_list))
+    numbers_list = generate_random_numbers(0, 100, 10)
+    print(reverse_selection_sort(numbers_list))
